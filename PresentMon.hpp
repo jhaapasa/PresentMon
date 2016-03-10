@@ -47,6 +47,7 @@ struct PresentMonArgs {
     const char *mOutputFileName = nullptr;
     const char *mTargetProcessName = nullptr;
     int mTargetPid = 0;
+	bool mScrollLockToggle = false;
 };
 
 struct PresentMonData {

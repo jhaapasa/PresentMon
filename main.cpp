@@ -48,8 +48,9 @@ int main(int argc, char ** argv)
             " -process_name [exe name]: record specific process.\n"
             " -process_id [integer]: record specific process ID.\n"
             " -output_file [path]: override the default output path.\n"
-            " -no_csv: do not create any output file.\n"
-            );
+			" -no_csv: do not create any output file.\n"
+			" -scroll_toggle: use scroll lock to toggle capture on/off.\n"
+			);
         return 0;
     }
 
@@ -86,7 +87,11 @@ int main(int argc, char ** argv)
             if (!strcmp(argv[i], "-no_csv"))
             {
                 args.mOutputFileName = "*";
-            }
+            } else if (!strcmp(argv[i], "-scroll_toggle"))
+			{
+				args.mScrollLockToggle = true;
+			}
+
         }
     }
 

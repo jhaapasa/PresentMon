@@ -158,7 +158,9 @@ void PresentMonEtw(PresentMonArgs args)
                 std::vector<PresentEvent> presents;
                 consumer.DequeuePresents(presents);
 
-                PresentMon_Update(data, presents, session.PerfFreq());
+				if (!(args.mScrollLockToggle && ! (GetKeyState(VK_SCROLL) & 1))) {
+					PresentMon_Update(data, presents, session.PerfFreq());
+				}
 
                 Sleep(100);
             }
